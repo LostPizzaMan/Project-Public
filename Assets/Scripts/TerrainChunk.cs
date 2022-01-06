@@ -270,7 +270,6 @@ public class TerrainChunk : MonoBehaviour
     List<int> tris = new List<int>();
     List<Vector2> uvs = new List<Vector2>();
     List<Color> colors = new List<Color>();
-    List<Vector3> frameData = new List<Vector3>();
 
     List<Vector3> transparentVerts = new List<Vector3>();
     List<int> transparentTris = new List<int>();
@@ -302,7 +301,6 @@ public class TerrainChunk : MonoBehaviour
         tris.Clear();
         uvs.Clear();
         colors.Clear();
-        frameData.Clear();
 
         transparentVerts.Clear();
         transparentTris.Clear();
@@ -348,7 +346,6 @@ public class TerrainChunk : MonoBehaviour
         mesh.triangles = tris.ToArray();
         mesh.uv = uvs.ToArray();
         mesh.colors = colors.ToArray();
-        mesh.SetUVs(3, frameData.ToArray());
 
         transparentMesh.vertices = transparentVerts.ToArray();
         transparentMesh.triangles = transparentTris.ToArray();

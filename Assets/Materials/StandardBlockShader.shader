@@ -12,7 +12,7 @@
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows addshadow vertex:vert
+        #pragma surface surf Standard fullforwardshadows addshadow 
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -29,18 +29,6 @@
         float _sunlightIntensity;
         float4 torchLight;
         float4 sunLight;
-
-        void vert (inout appdata_full v) 
-        {      
-            // v.texcoord3.x is offset
-            // v.texcoord3.y is the amount of frames
-            // v.texcoord3.z is the speed per frame
-
-            if (v.texcoord3.x > 0)
-            {
-                v.texcoord.y -= v.texcoord3.x * floor(fmod(_Time * v.texcoord3.z, v.texcoord3.y));           
-            }           
-        }
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
