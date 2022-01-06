@@ -30,7 +30,7 @@ Define your own blocks and items from within a JSON file and the game will load 
 
 Shortcuts include: Stack-Split, Combining Item Stacks and Shift-Holding.
 
-![inventory](Images/Screenshot4.png)
+![inventory](Images/Screenshot5.png)
 
 ### Dynamic Texture Atlas Packer 
 
