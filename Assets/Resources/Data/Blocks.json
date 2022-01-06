@@ -1,0 +1,162 @@
+[
+  {
+    "stringID": "Air",
+    "name": "Air",
+    "hardness": 0.0,
+	"transparent":true,
+    "rendertype": 0,
+    "tiles": [ "[Error]" ]
+  },
+  {
+    "stringID": "Dirt",
+    "name": "Dirt",
+    "hardness": 0.6,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "dirt" ]
+  },
+  {
+    "stringID": "Grass",
+    "name": "Grass",
+    "hardness": 0.6,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "grass_block_top", "grass_block_side", "dirt" ]
+  },
+  {
+    "stringID": "Stone",
+    "name": "Stone",
+    "hardness": 1.5,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "stone" ]
+  },
+  {
+    "stringID": "Trunk",
+    "name": "Trunk",
+    "hardness": 2.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "oak_log_top", "oak_log", "oak_log_top" ]
+  },
+  {
+    "stringID": "Leaves",
+    "name": "Leaves",
+    "hardness": 0.2,
+	"transparent":true,
+    "rendertype": 0,
+    "tiles": [ "birch_leaves" ]
+  },
+  {
+    "stringID": "Gold",
+    "name": "Gold",
+    "hardness": 3.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "gold_block" ]
+  },
+  {
+    "stringID": "Sponge",
+    "name": "Sponge",
+    "hardness": 0.6,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "sponge" ]
+  },
+  {
+    "stringID": "Planks",
+    "name": "Planks",
+    "hardness": 2.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "oak_planks" ]
+  },
+  {
+    "stringID": "Cobblestone",
+    "name": "Cobblestone",
+    "hardness": 2.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "cobblestone" ]
+  },
+  {
+    "stringID": "Bricks",
+    "name": "Bricks",
+    "hardness": 2.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "bricks" ]
+  },
+  {
+    "stringID": "Lamp",
+    "name": "Lamp",
+    "hardness": 0.3,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "redstone_lamp_on" ]
+  },
+  {
+    "stringID": "Flower",
+    "name": "Flower",
+    "hardness": 0.0,
+	"transparent":true,
+    "rendertype": 1,
+    "tiles": [ "dandelion" ]
+  },
+  {
+    "stringID": "Glass",
+    "name": "Glass",
+    "hardness": 0.3,
+	"transparent":true,
+    "rendertype": 0,
+    "tiles": [ "glass" ]
+  },
+  {
+    "stringID": "Cross_Grass",
+    "name": "Cross_Grass",
+    "hardness": 0.0,
+	"transparent":true,
+    "rendertype": 1,
+    "tiles": [ "grass_cross" ]
+  },
+  {
+    "stringID": "Bedrock",
+    "name": "Bedrock",
+    "hardness": 0.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "bedrock" ]
+  },
+  {
+    "stringID": "BlockOfDiamond",
+    "name": "Block of Diamond",
+    "hardness": 6.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "diamond_block" ]
+  },
+  {
+    "stringID": "IronOre",
+    "name": "Iron Ore",
+    "hardness": 3.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "iron_ore" ]
+  },
+  {
+    "stringID": "StoneBricks",
+    "name": "Stone Bricks",
+    "hardness": 3.0,
+	"transparent":false,
+    "rendertype": 0,
+    "tiles": [ "stone_bricks" ]
+  },
+  {
+    "stringID": "Sand",
+    "name": "Sand",
+    "hardness": 0.5,
+    "transparent": false,
+    "rendertype": 0,
+    "tiles": [ "sand" ]
+  }
+]

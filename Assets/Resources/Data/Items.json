@@ -1,0 +1,23 @@
+[
+  {
+    "stringID" : "Apple",
+    "itemName": "Apple",
+    "itemSprite": "Apple"
+  },
+  {
+    "stringID": "Diamond_Sword",
+    "itemName": "Diamond Sword",
+    "itemSprite": "Diamond_Sword"
+  },
+  {
+    "stringID": "Cookie",
+    "itemName": "Cookie",
+    "itemSprite": "Cookie"
+  },
+  {
+    "stringID": "Pepsi_Can",
+    "itemName": "Pepsi Can",
+    "itemSprite": "Pepsi_Can"
+  }  
+]
+
