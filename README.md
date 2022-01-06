@@ -1,6 +1,6 @@
-# DesignDemolish
+![screenshot1](https://raw.githubusercontent.com/LostPizzaMan/DesignDemolish-Public/main/Images/Screenshot1.jpg?token=AFJ43CBIFVLH6ZHHMYZJ6E3B24VLK)
 
-Design Demolish is a in-progress voxel engine that I'm working on for Unity. The goal is to create a highly scalable and moddable game.
+### Design Demolish is a work-in-progress voxel game engine that I'm working on for Unity. The goal is to create a highly scalable and moddable game.
 
 ## Features
 
