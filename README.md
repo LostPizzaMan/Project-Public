@@ -64,4 +64,4 @@ Coming soon.™
 
 Using block, item and inventory textures from:
 
-**Good Vibes** Texture Pack by Acaitart Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+**Good Vibes** by Acaitart Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
