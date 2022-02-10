@@ -2,20 +2,28 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
 	public int id;
 	private Inventory inv;
 
+	public Color normalColor;
+	public Color highlightColor;
+	private Image slotBackground;
+
+
 	void Start()
 	{
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+		slotBackground = GetComponent<Image>();
 	}
 
 	//Detect if the Cursor starts to pass over the GameObject
 	public void OnPointerEnter(PointerEventData pointerEventData)
 	{
+		slotBackground.color = highlightColor;
 		inv.isOverSlot = true;
 
 		inv.currentSlotHovered = id;
@@ -44,6 +52,7 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 	//Do this when the cursor exits the rect area of this selectable UI object.
 	public void OnPointerExit(PointerEventData eventData)
 	{
+		slotBackground.color = normalColor;		
 		inv.isOverSlot = false;
 	}
 
