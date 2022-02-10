@@ -103,5 +103,10 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 			}
 		}
 	}
+
+    void OnDisable()
+    {
+		slotBackground.color = normalColor;
+	}
 }
 
