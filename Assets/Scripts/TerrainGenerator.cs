@@ -160,11 +160,17 @@ public class TerrainGenerator : MonoBehaviour
                 System.Random RNG = new System.Random(xPos + zPos);
 
                 for (int x = 0; x < TerrainChunk.chunkWidth; x++)
+                {
                     for (int z = 0; z < TerrainChunk.chunkWidth; z++)
+                    {
+                        var noiseLayer = GetNoiseLayer(xPos + x, zPos + z);
+
                         for (int y = 0; y < TerrainChunk.chunkHeight; y++)
                         {
-                            chunk.blocks[x, y, z] = GetBlockType(xPos + x, y, zPos + z, RNG);
+                            chunk.blocks[x, y, z] = GetBlockType(xPos + x, y, zPos + z, RNG, noiseLayer);
                         }
+                    }
+                }
 
                 GenerateTrees(chunk.blocks, xPos, zPos);
             });
@@ -294,31 +300,19 @@ public class TerrainGenerator : MonoBehaviour
 
     // -- NOISE GENERATION -- \\
 
-    int GetBlockType(int x, int y, int z, System.Random RNG)
+    int GetBlockType(int x, int y, int z, System.Random RNG, NoiseLayer noiseLayer)
     {
         if (y == 0)
             return blockArray[7]; // Bedrock
 
         // -- NOISE -- \\
 
-        float simplex1 = noise.GetSimplex(x * .8f, z * .8f) * 10;
-        float simplex2 = noise.GetSimplex(x * 3f, z * 3f) * 10 * (noise.GetSimplex(x * .3f, z * .3f) + .5f);
-
-        float heightMap = simplex1 + simplex2;
-
-        //add the 2d noise to the middle of the terrain chunk
-        float baseLandHeight = TerrainChunk.chunkHeight * .5f + heightMap;
+        float baseLandHeight = noiseLayer.LandHeight;
+        float baseStoneHeight = noiseLayer.StoneHeight;
 
         //3d noise for caves and overhangs and such
-        float caveNoise1 = noise.GetPerlinFractal(x * 5f, y * 10f, z * 5f);
-        float caveMask = noise.GetSimplex(x * .3f, z * .3f) + .3f;
-
-        //stone layer heightmap
-        float simplexStone1 = noise.GetSimplex(x * 1f, z * 1f) * 10;
-        float simplexStone2 = (noise.GetSimplex(x * 5f, z * 5f) + .5f) * 20 * (noise.GetSimplex(x * .3f, z * .3f) + .5f);
-
-        float stoneHeightMap = simplexStone1 + simplexStone2;
-        float baseStoneHeight = TerrainChunk.chunkHeight * .25f + stoneHeightMap;
+        float caveNoise = noise.GetPerlinFractal(x * 5f, y * 10f, z * 5f);
+        float caveMask = noiseLayer.CaveMask;
 
         int oreSize = 10;
         float oreNoise = noise.GetSimplexFractal(x * 2.5f * oreSize, y * 5.0f * oreSize, z * 2.5f * oreSize);
@@ -367,7 +361,7 @@ public class TerrainGenerator : MonoBehaviour
             }
         }
 
-        if (caveNoise1 > Mathf.Max(caveMask, .2f))
+        if (caveNoise > Mathf.Max(caveMask, .2f))
             blockType = 0;
 
         return blockType;
@@ -422,5 +416,32 @@ public class TerrainGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    NoiseLayer GetNoiseLayer(int x, int z)
+    {
+        // land layer 
+        float simplex1 = noise.GetSimplex(x * .8f, z * .8f) * 10;
+        float simplex2 = noise.GetSimplex(x * 3f, z * 3f) * 10 * (noise.GetSimplex(x * .3f, z * .3f) + .5f);
+
+        float heightMap = simplex1 + simplex2;
+        float baseLandHeight = TerrainChunk.chunkHeight * .5f + heightMap;
+
+        // stone layer 
+        float simplexStone1 = noise.GetSimplex(x * 1f, z * 1f) * 10;
+        float simplexStone2 = (noise.GetSimplex(x * 5f, z * 5f) + .5f) * 20 * (noise.GetSimplex(x * .3f, z * .3f) + .5f);
+
+        float stoneHeightMap = simplexStone1 + simplexStone2;
+        float baseStoneHeight = TerrainChunk.chunkHeight * .25f + stoneHeightMap;
+
+        // cave mask 
+        float caveMask = noise.GetSimplex(x * .3f, z * .3f) + .3f;
+
+        return new NoiseLayer()
+        {
+            LandHeight = baseLandHeight,
+            StoneHeight = baseStoneHeight,
+            CaveMask = caveMask,
+        };
     }
 }

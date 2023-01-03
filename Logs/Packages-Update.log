@@ -1,0 +1,10 @@
+
+=== Mon Jan  2 12:11:12 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.8.0 to 1.14.18
+  com.unity.ide.vscode from version 1.2.3 to 1.2.5
+  com.unity.test-framework from version 1.1.27 to 1.1.31
